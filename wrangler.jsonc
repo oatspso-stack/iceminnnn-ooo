@@ -1,0 +1,43 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "iceminnnn-ooo",
+	"main": "./src/worker/index.ts",
+	"compatibility_date": "2025-10-08",
+	"upload_source_maps": true,
+	"observability": {
+		"enabled": true
+	},
+	"assets": {
+		"directory": "./dist/client",
+		"not_found_handling": "single-page-application",
+		"run_worker_first": [
+			"/.well-known/web-bot-auth/*",
+			"/api",
+			"/api/*",
+			"/index.json",
+			"/jsonld",
+			"/llms-full.txt",
+			"/llms.txt",
+			"/robots.txt",
+			"/*.jsonld",
+			"/*.md"
+		]
+	},
+	"ai": {
+		"binding": "AI"
+	},
+	"kv_namespaces": [
+		{
+			"binding": "VISIBILITY_CACHE",
+			"id": "4295f68c8c3741e583b5be0d3b497725"
+		}
+	],
+	"vars": {
+		"SITE_NAME": "Acme Docs",
+		"SITE_DESCRIPTION": "Product documentation for the Acme platform.",
+		"AI_MODEL": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+		"ENRICHMENT_CACHE_TTL": "3600",
+		"CONTENT_SIGNAL": "ai-input=yes, search=yes, ai-train=no",
+		"ENABLE_WEB_BOT_AUTH": "Game Application System Development Requirements  App Logo  Logo image: https://img1.pic.in.th/images/20260508_060416.png  - Use only the logo image. - Do not display any text or app name. - Main theme:   - Background: Black   - Text and buttons: Blue color matching the logo theme.  ---  1. Bottom Navigation Bar  The application must have a modern bottom navigation bar that moves with the screen.  Navigation buttons:  1. Home Page  - Main application homepage.  2. Server Search Page  - Search and browse available game servers.  3. Center \"+\" Button  - Create Post page. - The button should have a slightly transparent background effect.  4. Login Page  - User login and account system.  5. Settings Page  - User settings and profile management.  ---  2. Loading Screen  Loading duration: 5 seconds.  Loading animation:  - Use this image:   https://img2.pic.in.th/20260606_065747.png  Animation:  - The logo should appear from far away and move toward the user. - It should feel like a shooting star coming closer. - After 5 seconds, automatically enter the Home Page.  Loading background:  - Black background. - Falling stars / space effect.  ---  2.1 Home Page  Banner Slider  Slider image: https://img1.pic.in.th/images/20260606_063242.jpg  Size: 1280:427  Effects:  - Moving light reflection across the banner.  ---  Connected Servers  Display servers that the user has previously connected to.  If no server history exists: Show message:  \"You have not joined any server yet.\"  Add button: \"Search Server\"  Button redirects to Server Search Page.  ---  Real-time Server Display  Show only 3 servers.  Display:  - Server Logo only.  When clicking:  - Immediately open CONNECT page.  ---  3. Server Search Page  Purpose: Display online GTA San Andreas servers.  Information displayed:  - Server name - Server IP - Server image - Online status  Status colors:  - Online = Green - Offline = Red  ---  Admin Backend System  Admin must login to backend.  Admin password: oat12342  Backend features:  - Add servers - Delete servers - Update server information  Adding server:  Admin can input:  - Server name - Server image - Server IP - Online / Offline status - CONNECT button link  After confirmation:  - Display instantly on the Server Search page. - Update data in real time.  Server display:  - Server image - Server name - Real-time counter - Status  When clicking server:  Open server detail page:  - CONNECT button - Thai flag icon - Yellow star rating icon  ---  4. Post System (+ Button)  The center button opens the Post page.  Only logged-in users can create posts.  Post creation:  Users can add:  - Image - Title - Daily description  After posting:  - Display instantly in the Post feed.  Post display:  Show:  - User profile picture - Username - User rank - Post time - Like button - Comment button  User interaction:  - Clicking profile picture or username opens that user's profile. - Add Follow button.  ---  Post Rules  - Posts appear on:      - Post page   - User profile page  - Posts automatically reset every 24 hours.  - User profiles remain permanently.  - Users can delete their own posts using the 3-dot menu.  Other users can:  - Follow profiles - View their posts  Notification:  - Profile page has a bell icon. - Followers receive notifications when the user creates a new post.  ---  5. Login / Register System  Users must register before login.  If user tries to login without an account: Show message:  \"Please register before logging in.\"  Account system:  - Save registered users permanently. - Users can upload profile pictures. - Save profile data in real time.  ---  6. Settings Page  Users can edit:  Profile information:  - Profile picture - Username - Personal information  Additional information:  - Biography - Age - Birthday - Gender  After pressing save:  - Update information in real time.  Logout button:  - Red color button.  ---  7. Modern UI / UX Design  Design style:  - Modern - Clean - Simple - App-style interface  Important:  - Use icons instead of emojis.  Interaction effects:  When clicking:  - Buttons - Icons - Menu items  Show modern app touch animation effects.  ---  8. Button & Form Effects  All buttons:  - Show soft glowing border when clicked. - Smooth modern Web App style.  Button behavior:  - Do not zoom the entire button. - Only the border should create a zoom/ripple effect.  Click animation:  - A soft transparent circle expands outward to show interaction.  Forms:  - Modern rounded design. - Smooth border animation when active.  ---  9. Membership Rank System  Users who register receive ranks.  Rank 1: NEWPLAYER  Icon:  - Blue diamond icon  Rank 2: MEMBER  Icon:  - Rainbow diamond icon  Rank 3: SUPER MEMBER  Icon:  - Gold diamond icon  Rank system:  - Each rank upgrade takes 10 days. - Rank progress should be shown on the rank page.  Rank display:  Show rank:  - Behind username - On profile - On posts - Everywhere username appears  ---  10. Real-time Data Storage  The system must save player information into Google Sheet.  Data requirements:  - Real-time synchronization. - Store user information. - Store account data. - Store profile data. - Store server data. - Store post data."
+	}
+}
